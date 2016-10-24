@@ -1,31 +1,49 @@
-# Social Posting Application
+# Social media app
+Social-media-app is an application that lets users schedule and post to Social Media.
 
-SocialPoster is an application that lets users schedule and post to Social Media. 
+# Features
+1. Post your status to selected social media (Twitter,Facebook)
 
-This taks requires the Developer to build a foundation application that will do the following :
+# Setup
+Clone this repo to your desktop and run composer update to install all the dependencies.
 
-1. Create Text Only Social Post
-2. Post to multiple Social Networks at once.
+# Configuration
+You must want to look  
+lib/config/FbConfig.php,
+lib/config/TwitterConfig.php
 
-The user is free to choose any Social network they prefer. Credentials are to be stored in a configuraiton file. The application doesn't have to have a pretty UI.
+to configuration like bellow.
 
-You are allowed to use 3rd party packages with composer , but refrain from using a complete framework. 
+1. FbConfig.php
+add your facebook configuration detail bellow array.
+```php
+  return [
+            'appId'=>'Your app id', // appId  from your facebook app
+            'secret'=>'Your secrt', // secret  from your facebook app
+            'accessToken'=>'your access Token', // accessToken  from your facebook app
+          ];
+```
+2. TwitterConfig.php
+add your twitter configuration detail bellow array.
+```php
+return [
+            'oauth_access_token'=>'your auth access token',
+            'oauth_access_token_secret'=>'your auth access token secret',
+            'consumer_key'=>'your consumer key',
+            'consumer_secret'=>'your consumer secret',
+            'url_postStatusUpdate'=>'https://api.twitter.com/1.1/statuses/update.json'
+		   ];
+```
+# Usage
+After you clone this repo to your desktop, go to its root directory and run composer update to install its dependencies.
 
-Also add a Instructions.md file that explains your file structure and design considerations architectural decisions made. 
+Once the dependencies are installed, you can add your configuration data mentioned mentioned above.
 
-If you use composer , **do not** commit the vendor folder. 
-
-Key objectives :
-
-1. How well the code is organised. 
-2. Ensure that the once can easily add support to additional 3rd party integrations with ease.
-3. Make it a composer Package (additional) 
+Then you can update your status on Twitter and facebook walls as you wish.
 
 
-Hints :
 
-1. Use of basic OOP Practices
-2. Documentation / Comments
-3. PSR complience
 
-Once done , submit a pull request and drop an email to jobs@riverviewms.com
+
+
+
